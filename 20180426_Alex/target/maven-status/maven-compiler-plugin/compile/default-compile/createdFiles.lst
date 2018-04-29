@@ -1,0 +1,12 @@
+es\albarregas\controllers\Modificar.class
+es\albarregas\controllers\Borrar.class
+es\albarregas\connections\Conexion.class
+es\albarregas\controllers\Eliminar.class
+es\albarregas\beans\Ave.class
+es\albarregas\controllers\Insertar.class
+es\albarregas\filters\UTF8Filter.class
+es\albarregas\utils\MyLogger.class
+es\albarregas\controllers\Actualizar.class
+es\albarregas\controllers\Consultar.class
+es\albarregas\controllers\Operacion.class
+es\albarregas\controllers\Crear.class
