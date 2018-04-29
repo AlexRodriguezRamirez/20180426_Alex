@@ -10,7 +10,6 @@ import es.albarregas.connections.Conexion;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -59,9 +58,10 @@ public class Insertar extends HttpServlet {
                 preparada.executeUpdate();
             }
             
-            catch (SQLException e) {
+            catch (SQLException ex) {
                 error = "La anilla " + ave.getAnilla() + " ya se encuentra en la base de datos.";
-                e.printStackTrace();
+                new es.albarregas.utils.MyLogger().doLog(ex,this.getClass(),"error");
+                ex.printStackTrace();
             }
             
 
@@ -94,6 +94,7 @@ public class Insertar extends HttpServlet {
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(Insertar.class.getName()).log(Level.SEVERE, null, ex);
+            new es.albarregas.utils.MyLogger().doLog(ex,this.getClass(),"error");
         }
     }
 
@@ -112,6 +113,7 @@ public class Insertar extends HttpServlet {
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(Insertar.class.getName()).log(Level.SEVERE, null, ex);
+            new es.albarregas.utils.MyLogger().doLog(ex,this.getClass(),"error");
         }
     }
 

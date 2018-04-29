@@ -77,9 +77,10 @@ public class Consultar extends HttpServlet {
                     ave = new Ave(resultado.getString(1),resultado.getString(2),resultado.getString(3),resultado.getString(4));  
                     request.setAttribute("ave", ave);
             //url = "";
-                } catch (SQLException e) {
+                } catch (SQLException ex) {
                     request.setAttribute("error", "La anilla " + anilla + " no se encuentra en la base de datos.");
-                    e.printStackTrace();
+                    new es.albarregas.utils.MyLogger().doLog(ex,this.getClass(),"error");
+                    ex.printStackTrace();
                 }  
                 
                 url = "JSP/Read/mostrar.jsp";
@@ -109,6 +110,7 @@ public class Consultar extends HttpServlet {
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(Consultar.class.getName()).log(Level.SEVERE, null, ex);
+            new es.albarregas.utils.MyLogger().doLog(ex,this.getClass(),"error");
         }
     }
 
@@ -127,6 +129,7 @@ public class Consultar extends HttpServlet {
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(Consultar.class.getName()).log(Level.SEVERE, null, ex);
+            new es.albarregas.utils.MyLogger().doLog(ex,this.getClass(),"error");
         }
     }
 

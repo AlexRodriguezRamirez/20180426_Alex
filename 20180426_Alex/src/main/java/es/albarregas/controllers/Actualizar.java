@@ -96,6 +96,7 @@ public class Actualizar extends HttpServlet {
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(Actualizar.class.getName()).log(Level.SEVERE, null, ex);
+            new es.albarregas.utils.MyLogger().doLog(ex,this.getClass(),"error");
         }
     }
 
@@ -114,6 +115,7 @@ public class Actualizar extends HttpServlet {
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(Actualizar.class.getName()).log(Level.SEVERE, null, ex);
+            new es.albarregas.utils.MyLogger().doLog(ex,this.getClass(),"error");
         }
     }
 

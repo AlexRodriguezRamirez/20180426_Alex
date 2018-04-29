@@ -7,3 +7,6 @@ La parte de Lectura de datos solamente tiene dos vistas y un controlador, en la 
 Las otras tres partes son muy similares entre sí: Constan de 3 vistas y 2 controladores cada una, que funcionan de manera similar a la parte de lectura, añadiendo una vista más entre la entrada y la salida de información para solicitar la confirmación al cliente, evitando así que se puedan borrar o modificar datos por error.
 
 Queda pendiente modificar la parte de eliminación de registros para implementar que se puedan eliminar varios a la vez mediante checkboxes en vez de radio buttons.
+
+
+Commit 29/04/2018: Añadida la llamada al método doLog() en todos los bloques try-catch de los controladores.

@@ -100,6 +100,7 @@ public class Eliminar extends HttpServlet {
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(Eliminar.class.getName()).log(Level.SEVERE, null, ex);
+            new es.albarregas.utils.MyLogger().doLog(ex,this.getClass(),"error");
         }
     }
 
@@ -118,6 +119,7 @@ public class Eliminar extends HttpServlet {
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(Eliminar.class.getName()).log(Level.SEVERE, null, ex);
+            new es.albarregas.utils.MyLogger().doLog(ex,this.getClass(),"error");
         }
     }
 

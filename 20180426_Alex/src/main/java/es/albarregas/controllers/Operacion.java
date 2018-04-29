@@ -88,8 +88,9 @@ public class Operacion extends HttpServlet {
                     }
                     sesion.setAttribute("aves", aves);
                 }
-                catch (SQLException e) {
-                    e.printStackTrace();
+                catch (SQLException ex) {
+                    new es.albarregas.utils.MyLogger().doLog(ex,this.getClass(),"error");
+                    ex.printStackTrace();
                 }
                 
                 
@@ -118,6 +119,7 @@ public class Operacion extends HttpServlet {
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(Operacion.class.getName()).log(Level.SEVERE, null, ex);
+            new es.albarregas.utils.MyLogger().doLog(ex,this.getClass(),"error");
         }
     }
 
@@ -136,6 +138,7 @@ public class Operacion extends HttpServlet {
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(Operacion.class.getName()).log(Level.SEVERE, null, ex);
+            new es.albarregas.utils.MyLogger().doLog(ex,this.getClass(),"error");
         }
     }
 

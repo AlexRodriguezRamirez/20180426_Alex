@@ -58,10 +58,9 @@ public class Crear extends HttpServlet {
         
         try {
             BeanUtils.populate(ave, request.getParameterMap());
-        } catch (IllegalAccessException ex) {
+        } catch (IllegalAccessException | InvocationTargetException ex) {
             Logger.getLogger(Crear.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InvocationTargetException ex) {
-            Logger.getLogger(Crear.class.getName()).log(Level.SEVERE, null, ex);
+            new es.albarregas.utils.MyLogger().doLog(ex,this.getClass(),"error");
         }
         sesion.setAttribute("ave", ave);
         
